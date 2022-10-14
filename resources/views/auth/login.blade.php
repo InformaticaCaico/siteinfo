@@ -44,6 +44,9 @@
     <a href="{{route('social.login', ['provider' => 'github'])}}" class="btn btn-block uza-btn btn-2">
         <i class="fa fa-github"></i> Entrar com o GitHub
     </a>
+    <a href="{{route('suap.login')}}" class="btn btn-block uza-btn btn-2">
+        <i class="fa fa-github"></i> Entrar com o SUAP
+    </a>
     </div>
     <div class="text-center">
         <br>

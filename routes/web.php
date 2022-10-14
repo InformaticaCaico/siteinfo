@@ -1,10 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SolicitacaoController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginSocialController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SuapController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +54,7 @@ Route::get('/admin/cadastrados', [AdminController::class, 'cadastrados'])->name(
 
 Route::resource('/admin', AdminController::class);
 
+
 // Route::get('/admin', function () {
 //     return view('usuarios.admin.admin');
 // })->middleware(['auth']);
@@ -69,4 +72,5 @@ Route::resource('/admin', AdminController::class);
 //Route::get('/register',[UsersController::class,'register'])->name('register');
 //Route::post('/store', [UsersController::class,'store'])->name('store');
 
-require __DIR__ . '/auth.php';
+require __DIR__."/auth.php";
+require __DIR__.'/suap.php';
