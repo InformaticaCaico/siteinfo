@@ -5,10 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Gate;
 use App\Policies\UserPolicy;
-use Image;
+use Auth, Gate, Image;
 
 use App\Providers\RouteServiceProvider;
 class UserController extends Controller
@@ -20,12 +18,15 @@ class UserController extends Controller
     }
 
     public function index () {
-        $response = Gate::inspect('admin-user');
+
+        return Gate::allows('view admin page') ? view('usuarios.dashboard') : redirect()->intended(RouteServiceProvider::ADMIN);
+
+        /* $response = Gate::inspect('admin-user');
         if($response->allowed()){
             return redirect()->intended(RouteServiceProvider::ADMIN);
         }else{
             return view('usuarios.dashboard');
-        }
+        } */
     }
 
     public function show(User $user) {

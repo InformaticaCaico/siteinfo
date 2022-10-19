@@ -22,7 +22,6 @@ class CreateUsersTable extends Migration
             $table->date('nascimento')->nullable();
             $table->string('formacao')->nullable();
             $table->string('image')->nullable();
-            $table->string('role')->nullable();
             $table->softDeletes();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();

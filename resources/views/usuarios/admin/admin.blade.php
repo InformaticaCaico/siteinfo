@@ -5,7 +5,7 @@
 @section('conteudo')
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Painel de Controle</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Painel de Controle do administrador</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Novo Post</a>
                     </div>

@@ -1,10 +1,9 @@
 <?php
 
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\SolicitacaoController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\LoginSocialController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{
+    UserController, SolicitacaoController, AdminController, LoginSocialController, DashboardController
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('site.home');
 })->name('home');
+
+Route::get('/dashboard', DashboardController::class)->middleware(['auth'])->name('dashboard');
+
 Route::get('/curso', function () {
     return view('site.curso');
 })->name('curso');
